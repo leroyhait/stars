@@ -1,0 +1,159 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.horizon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #001144, transparent);
+    z-index: 1;
+}
+
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top right, black, #001144);
+    z-index: -1;
+}
+
+
+.moon{
+    position: absolute;
+    top: 10%;
+    right: 80%;
+    width: 150px;
+    height: 150px;
+    background-color: lemonchiffon;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    animation: twinkle 5s infinite ease-in-out;
+}
+
+.starFall {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    animation: fall 5s ease-out forwards;
+    opacity: 1;
+}
+
+.cloud1 {
+
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 100px;
+    box-shadow: 50px 50px 0 rgba(255, 255, 255, 0.5), 100px 40px 0 rgba(255, 255, 255, 0.4), 70px 80px 0 rgba(255, 255, 255, 0.6);
+    animation: moveClouds 40s linear infinite;
+}
+
+.cloud2 {
+
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 100px;
+    box-shadow: 50px 50px 0 rgba(255, 255, 255, 0.5), 100px 40px 0 rgba(255, 255, 255, 0.4), 70px 80px 0 rgba(255, 255, 255, 0.6);
+    animation: moveClouds 80s linear infinite;
+}
+
+.cloud3 {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 100px;
+    box-shadow: 50px 50px 0 rgba(255, 255, 255, 0.5), 100px 40px 0 rgba(255, 255, 255, 0.4), 70px 80px 0 rgba(255, 255, 255, 0.6);
+    animation: moveClouds 120s linear infinite;
+}
+
+.crater1 {
+    width: 25px;
+    height: 25px;
+    top: 40%;
+    left: 10%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    box-shadow: inset -3px -3px 7px rgba(0, 0, 0, 0.1);
+}
+
+.crater2 {
+    width: 15px;
+    height: 15px;
+    top: 70%;
+    left: 40%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    box-shadow: inset -3px -3px 7px rgba(0, 0, 0, 0.1);
+}
+
+.crater3 {
+    width: 20px;
+    height: 20px;
+    top: 30%;
+    left: 70%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    box-shadow: inset -3px -3px 7px rgba(0, 0, 0, 0.1);
+}
+
+
+@keyframes moveClouds {
+    from {
+        left: -200px;
+    }
+    to {
+        left: 100vw;
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+@keyframes fall {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(200px, 400px); /* Смещение звезды */
+        opacity: 0;
+    }
+}
